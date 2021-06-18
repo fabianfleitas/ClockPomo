@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html body {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background: linear-gradient(318deg, #7c1e5c 0%, #33b6fa 100%);
+  color: #fff;
+  font-family: 'poppins', sans-serif;
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.container #title {
+  display: none;
+  font-size: 3rem;
+}
+
+.container .clock-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(16deg, rgba(51, 250, 249, 0.2) 0%, rgba(18, 30, 82, 0.6) 100%);
 }
 
-.App-link {
-  color: #61dafb;
+.container .clock-container .display-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+  height: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container .clock-container .display-container #timer-label {
+  margin-top: 1rem;
+}
+
+.container .clock-container .display-container #time-left {
+  width: 100%;
+  font-size: 6rem;
+}
+
+.container .clock-container .session-container,
+.container .clock-container .break-container {
+  font-size: 1.6rem;
+  width: 50%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: rem;
+}
+
+.container .clock-container .session-container .time-label,
+.container .clock-container .break-container .time-label {
+  width: 100%;
+}
+
+.material-icons {
+  font-size: 2.6rem !important;
+  cursor: pointer;
+}
+
+.material-icons:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.length {
+  font-size: 2.5rem;
+  font-family: "abel";
+}
+
+.help-section #help-icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2.1rem !important;
+}
+
+.help-section .help-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 4rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.help-section .help-modal .help-content {
+  background-color: #7C1E5C;
+  margin: auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 80%;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.help-section .help-modal .help-content #close-help {
+  float: right;
+  font-size: 1.5rem !important;
+}
+
+.help-section .help-modal .help-content a,
+.help-section .help-modal .help-content a:active,
+.help-section .help-modal .help-content a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.help-section .help-modal .help-content .credits {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .container .clock-container {
+    max-width: 850px;
+    height: auto;
+    border-radius: 5%;
   }
-  to {
-    transform: rotate(360deg);
+  .container #title {
+    display: block;
   }
 }
+
+.material-icons {
+  font-size: 3.5rem !important;
+}
+
+@media screen and (min-width: 600px) and (min-height: 799px) {
+  .container .clock-container {
+    padding: 2rem 0;
+    height: 600px;
+  }
+}
+/*# sourceMappingURL=App.css.map */

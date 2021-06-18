@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+$bg: linear-gradient(318deg,
+rgba(124,
+30,
+92,
+1) 0%,
+rgba(51,
+182,
+250,
+1) 100%);
+$bg2:linear-gradient(16deg,
+rgba(51,
+250,
+249,
+.2) 0%,
+rgba(18,
+30,
+82,
+.6) 100%);
+$byzamtium: #7C1E5C;
+@mixin center {
+    display: grid;
+    place-items: center;
+}
+
+@mixin flex-wrap($gap: 0) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+html {
+    box-sizing: border-box;
+    body {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background: $bg;
+        color: #fff;
+        font: {
+            family: 'poppins', sans-serif;
+            size: 2rem;
+        }
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.container {
+    @include center;
+    #title {
+        display: none;
+        font-size: 3rem;
+    }
+    .clock-container {
+        @include flex-wrap;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        background: $bg2;
+        .display-container {
+            @include flex-wrap();
+            height: 50%;
+            #timer-label {
+                margin-top: 1rem;
+            }
+            #time-left {
+                width: 100%;
+                font-size: 6rem;
+            }
+        }
+        .session-container,
+        .break-container {
+            font-size: 1.6rem;
+            width: 50%;
+            margin: auto;
+            @include flex-wrap(rem);
+            .time-label {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.material-icons {
+    font-size: 2.6rem !important;
+    cursor: pointer;
+}
+
+.material-icons:hover {
+    transform: scale(1.1);
+}
+
+.length {
+    font: {
+        size: 2.5rem;
+        family: "abel";
+    }
+}
+
+.help-section {
+    #help-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 2.1rem !important;
+    }
+    .help-modal {
+        display: none;
+        //
+        position: fixed;
+        z-index: 1;
+        padding-top: 4rem;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        .help-content {
+            background-color: $byzamtium;
+            margin: auto;
+            padding: 1rem;
+            border: 1px solid #888;
+            width: 80%;
+            font-size: 1.2rem;
+            padding: 1rem;
+            #close-help {
+                float: right;
+                font-size: 1.5rem !important;
+            }
+            a,
+            a:active,
+            a:visited {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+            }
+            .credits {
+                font-size: 0.8rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:600px) {
+    .container {
+        .clock-container {
+            max-width: 850px;
+            height: auto;
+            border-radius: 5%;
+        }
+        #title {
+            display: block;
+        }
+    }
+}
+
+.material-icons {
+    font-size: 3.5rem !important;
+}
+
+@media screen and (min-width:600px) and (min-height:799px) {
+    .container {
+        .clock-container {
+            padding: 2rem 0;
+            height: 600px;
+        }
+    }
+}
